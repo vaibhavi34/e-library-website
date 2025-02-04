@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>E-library home page </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">E-library</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="home page .html">Home</a></li>
+          <li><a href="Book Categories table.html">Book Categories</a></li>
+          <li><a href="User Book Interaction.html">User Book Interaction</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <style>
+            /* Container for the search input and button */
+            .search-container {
+              display: flex;
+              align-items: last baseline;
+              justify-content: left;
+              width: -50%;
+              padding: -10px;
+              background-color: #24232357;
+              /* Light background for the search container */
+              border-radius: 5px;
+              box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+            }
+  /* Style for the search input box */
+  .search-box {
+              padding: 10px;
+              width: 800px;
+              border: -5px solid #fffcfc;
+              border-radius: 5px;
+              font-size: 16px;
+            }
+
+            /* Style for the search button */
+            .search-button {
+              padding: 10px 20px;
+              margin-left: 10px;
+              background-color: #007BFF;
+              /* Blue button */
+              color: rgb(231, 222, 222);
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 10px;
+            }
+
+            .search-button:hover {
+              background-color: #0056b3;
+              /* Darker blue on hover */
+            }
+          </style>
+
+          <div>
+            <div class="search-container">
+              <input type="text" class="search-box" placeholder="Search...">
+              <a href="Search Result.html">Search</a>
+
+            </div>
+
+
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Book Interaction</title>
+    
+    <style>
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 33px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #000000;
+            color: white;
+        }
+        tr:hover { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+
+    <h1>User Book Interaction Table</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Book ID</th>
+                <th>Book Title</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+                <th>Status</th>
+                <th>Favorite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample data row -->
+            <tr>
+                <td>001</td>
+                <td>BK101</td>
+                <td>mastering business & Finance Book</td>
+                <td>2024-06-12</td>
+                <td>2024-06-25</td>
+                <td>Returned</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>BK102</td>
+                <td>Email Marketing Book</td>
+                <td>2024-07-15</td>
+                <td>2024-07-28</td>
+                <td>Returned</td>
+                <td>No</td>
+            </tr>
+
+            <tr>
+                <td>003</td>
+                <td>BK103</td>
+                <td>Social media Marketing Book</td>
+                <td>2024-08-15</td>
+                <td>2024-08-28</td>
+                <td>Returned</td>
+                <td>yes</td>
+            </tr>
+
+            <td>004</td>
+                <td>BK104</td>
+                <td>Graphic desing comprehensive guide book</td>
+                <td>2024-09-15</td>
+                <td>2024-09-28</td>
+                <td>Returned</td>
+                <td>yes</td>
+            </tr>
+            <td>005</td>
+            <td>BK105</td>
+            <td>UX & UI Desing Book</td>
+            <td>2024-10-15</td>
+            <td>2024-10-28</td>
+            <td>unreturned</td>
+            <td>yes</td>
+        </tr>
+        
+    </table>
+
+    <style>
+      .bg-4 {
+        background-color: #000000;
+        color: #ffffff;
+  
+      }
+    </style>
+    <footer class="container-fluid bg-4 text-center">
+        <p>Copywrite@2024 |All rights reserved | <a href=" home page .html"> E-library</a></p>
+      </footer>
+</body>
+</html>

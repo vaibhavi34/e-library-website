@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Dashboard - User List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home page .html">E-library</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home page .html">Home</a></li>
+        <li><a href="Book Categories table.html">Book Categories</a></li>
+        <li><a href="User Book Interaction.html">User Book Interaction</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+
+
+    </div>
+  </div>
+</nav>
+
+
+
+<body>
+
+
+<div class="container">
+    <h2>Admin Dashboard - User List</h2>
+
+    <!-- Add User Form -->
+    <div class="form-container">
+        <h3>Add New User</h3>
+        <form action="add_user.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Add User</button>
+        </form>
+    </div>
+
+    <!-- User List -->
+    <div class="user-list">
+        <h3>User List</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                    <tr>
+                        <td><?= htmlspecialchars($row['name']) ?></td>
+                        <td><?= htmlspecialchars($row['email']) ?></td>
+                        <td><?= htmlspecialchars($row['role']) ?></td>
+                    </tr>
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+  .bg-4 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+  }
+</style>
+
+<footer class="container-fluid bg-4 text-center">
+  <p>Copywrite@2024 |All rights reserved | <a href="home page .html"> E-library</a></p>
+</footer>
+
+</body>
+</html>
