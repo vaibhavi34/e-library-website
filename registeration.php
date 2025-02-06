@@ -1,28 +1,25 @@
-<<?php
+<php
+
 // Database configuration
 $host = 'localhost';    // Server address
-$dbname = 'db'; // Database name
-$username = 'root';      // Database username (default for XAMPP/WAMP)
-$password = '';          // Database password (default is empty for XAMPP/WAMP)
+$db_username = 'if0_38247904';
+$db_password = 'EDqh2aokYN';
+$db_name = 'if0_38247904';
 
 // Establish connection
 $conn = new mysqli($host, $username, $password, $dbname);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-// Connection successful
-echo "Database connected successfully!";
 ?>
 
-<?php
+<php
 // Include database connection
-include 'db_connection.php';
+include 'REconnect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get form data
+    $fullname = $_POST['fullname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -31,16 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert data into the database
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $hashed_password);
-
-    if ($stmt->execute()) {
-        echo "Registration successful!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
+    $sql = "INSERT INTO users (fullname,username, email, password) VALUES (?, ?, ?)";
     $stmt->close();
     $conn->close();
 }
