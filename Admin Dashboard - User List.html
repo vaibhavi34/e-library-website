@@ -2,69 +2,192 @@
 <html lang="en">
 
 <head>
-    <title>Admin Dashboard - User List</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+  <title>Admin Dashboard - User List page </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-
-<nav class="navbar navbar-inverse">
-
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="home page .html">E-library</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="home page .html">Home</a></li>
-        <li><a href="Book Categories table.html">Book Categories</a></li>
-        <li><a href="User Book Interaction.html">User Book Interaction</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-
-
-    </div>
-  </div>
-</nav>
-
-
 
 <body>
 
 
+  <nav class="navbar navbar-inverse">
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home page .html">E-library</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="home page .html">Home</a></li>
+          <li><a href="Book Categories table.html">Book Categories</a></li>
+          <li><a href="User Book Interaction.html">User Book Interaction</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <style>
+            /* Container for the search input and button */
+            .search-container {
+              display: flex;
+              align-items: last baseline;
+              justify-content: left;
+              width: -50%;
+              padding: -10px;
+              background-color: #24232357;
+              /* Light background for the search container */
+              border-radius: 5px;
+              box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Style for the search input box */
+            .search-box {
+              padding: 10px;
+              width: 300px;
+              border: -5px solid #fffcfc;
+              border-radius: 5px;
+              font-size: 16px;
+            }
+
+            /* Style for the search button */
+            .search-button {
+              padding: 10px 20px;
+              margin-left: 10px;
+              background-color: #007BFF;
+              /* Blue button */
+              color: rgb(231, 222, 222);
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              font-size: 10px;
+            }
+
+            .search-button:hover {
+              background-color: #0056b3;
+              /* Darker blue on hover */
+            }
+          </style>
+
+          <div>
+            <div class="search-container">
+              <input type="text" class="search-box" placeholder="Search...">
+              <a href="Search Result.html">Search</a>
+
+            </div>
+
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+          <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - User List</title>
+    <style>
+    
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container, .user-list {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .add-user-btn {
+            background-color: #0a0a0a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .add-user-btn:hover {
+            background-color: #050505;
+        }
+        .user-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .user-list th, .user-list td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .user-list th {
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<body>
+
 <div class="container">
     <h2>Admin Dashboard - User List</h2>
-
+    
     <!-- Add User Form -->
     <div class="form-container">
         <h3>Add New User</h3>
-        <form action="add_user.php" method="POST">
+        <form id="addUserForm">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" required>
+                <input type="text" id="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <input type="email" id="email" required>
             </div>
             <div class="form-group">
                 <label for="role">Role</label>
-                <input type="text" id="role" name="role" class="form-control" required>
+                <input type="text" id="role" required>
             </div>
-            <button type="submit" class="btn btn-dark">Add User</button>
+            <button type="submit" class="add-user-btn">Add User</button>
         </form>
     </div>
 
     <!-- User List -->
     <div class="user-list">
         <h3>User List</h3>
-        <table class="table table-bordered">
+        <table>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -72,28 +195,62 @@
                     <th>Role</th>
                 </tr>
             </thead>
-            <tbody>
-    
-                    <tr>
-                        <td><?= htmlspecialchars($row['name']) ?></td>
-                        <td><?= htmlspecialchars($row['email']) ?></td>
-                        <td><?= htmlspecialchars($row['role']) ?></td>
-                    </tr>
-              
+            <tbody id="userTableBody">
+                <!-- User rows will appear here -->
             </tbody>
         </table>
     </div>
 </div>
-<style>
-  .bg-4 {
-    background-color: #2f2f2f;
-    color: #ffffff;
-  }
-</style>
 
-<footer class="container-fluid bg-4 text-center">
-  <p>Copywrite@2024 |All rights reserved | <a href="home page .html"> E-library</a></p>
-</footer>
+<script>
+    // Function to add a new user to the table
+    function addUserToTable(name, email, role) {
+        const tableBody = document.getElementById('userTableBody');
+        const row = document.createElement('tr');
+        
+        // Create and append cells for each user detail
+        const nameCell = document.createElement('td');
+        nameCell.textContent = name;
+        row.appendChild(nameCell);
+
+        const emailCell = document.createElement('td');
+        emailCell.textContent = email;
+        row.appendChild(emailCell);
+
+        const roleCell = document.createElement('td');
+        roleCell.textContent = role;
+        row.appendChild(roleCell);
+
+        // Append the row to the table body
+        tableBody.appendChild(row);
+    }
+
+    // Form submission handler
+    document.getElementById('addUserForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Collect form input values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const role = document.getElementById('role').value;
+
+        // Add the user to the table
+        addUserToTable(name, email, role);
+
+        // Clear the form
+        document.getElementById('addUserForm').reset();
+    });
+</script>
+<style>
+    .bg-4 {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    </style>
+    
+    <footer class="container-fluid bg-4 text-center">
+      <p>Copywrite@2024 |All rights reserved | <a href="home page .html"> E-library</a></p>
+    </footer>
 
 </body>
 </html>
