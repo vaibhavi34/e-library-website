@@ -12,7 +12,7 @@ $password = "";
 $database = " dbnew785";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, );
+$conn = mysqli_connect($servername, $username, $password,  );
 
 // Die if connection was not successful
 if (!$conn) {
