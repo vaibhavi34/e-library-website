@@ -90,7 +90,7 @@
   <body>
     <div class="signup-container">
       <h1>Registration</h1>
-      <form action="registeration.php" method="phpinfo()">
+    <form action="registeration.php" method="post">
       <form>
           <input type="fullname" placeholder="Full Name" required>
           <input type="username" placeholder="User Name" required>
@@ -100,24 +100,7 @@
       </form>
       
   </div>
-  <script>
-    function login() {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const errorMessage = document.getElementById("error-message");
-
-        // Simulate authentication (replace with real logic if needed)
-        const validUsername = "admin";
-        const validPassword = "12345";
-
-        if (username === validUsername && password === validPassword) {
-            errorMessage.textContent = ""; // Clear any error message
-            window.location.href = "homepage2.html"; // Redirect to home page
-        } else {
-            errorMessage.textContent = "Invalid username or password!";
-        }
-    }
-</script>
+  
 </body>
   
   
