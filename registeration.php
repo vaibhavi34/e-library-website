@@ -1,37 +1,54 @@
 <?php
 
-// Configuration
-$db_host = 'localhost:8080';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'db';
+/*
+Ways to connect to a MySQL Database 
+1. MySQli extension
+2. PDO 
+*/
+// connecting td the Database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = " dbnew785";
 
 // Create connection
-$conn = new mysqli($dbhost, $db_username, $db_password, $dbname,);
+$conn = mysqli_connect($servername, $username, $password, );
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Die if connection was not successful
+if (!$conn) {
+    die("Sorry we failed to connect: " . mysqli_connect_error());
+}
+else{
+    echo "registeration succesfull<br>";
 }
 
-// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $full_name = $_POST["full_name"];
-    $user_name = $_POST["user_name"];
-    $email_address = $_POST["email_address"];
-    $password = $_POST["password"];
+    // Check if 'fullname' key exists
+    $fullname = isset($_POST['fullname']) ? trim($_POST['fullname']) : '';
+    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $emailaddress = isset($_POST['emailaddress']) ? trim($_POST['emailaddress']) : '';
+    $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
-    // SQL query to insert data
-    $sqli = "registration (full_name, user_name, email_address, password) VALUES ('$name', 'user_name', '$email_address', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Registration successful!";
+ 
+    if (empty($fullname) || empty($email) || empty($password)) {
+        echo "All fields are required!"; 
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Invalid email format!";
+        } else {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO `redbnew785`(`Id`, `fullname`, `username`, `emailaddress`, `password`) VALUES (?, ?, ? ? ?)";
+
+            if ($stmt = $conn->prepare($sql)) {
+                $stmt->bind_param("sss", $fullname, $email, $hashed_password);
+                if ($stmt->execute()) {
+                    echo "Registration successful!<br>";
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+                $stmt->close();
+            }
+        }
     }
 }
-
-// Close connection
-$conn->close();
-
 ?>
