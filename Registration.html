@@ -90,7 +90,7 @@
   <body>
     <div class="signup-container">
       <h1>Registration</h1>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeQlFGbUOEOH30vALN7QvGkQC5kODNLriFDV42X2ZsSUL_t5A/viewform?usp=sharing" method="post">
+  <form action="registeration.php" method="post">
       <form>
           <input type="fullname" placeholder="Full Name" required>
           <input type="username" placeholder="User Name" required>
@@ -103,23 +103,7 @@
   
 </body>
   
-  <script>
-function doPost(e) {
-  var sheet = SpreadsheetApp.openById("https://script.google.com/macros/s/AKfycbzRorh-ZbyJqCNjh500sqZGvBcUsim386gl7y8_JSu2SbzA8vd7L3_leL9py0yb1crUdw/exec").getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
   
-  sheet.appendRow([
-    new Date(),
-    data.fullname,
-    data.username,
-    data.emailaddress,
-    data.password,
-  ]);
-
-  return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
-}
-
-  </script>
   
   <style>
     .bg-4 {
